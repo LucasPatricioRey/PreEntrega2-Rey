@@ -6,7 +6,6 @@ let venta_total = 0;
 let cantidad = 0;
 let carrito;
 
-//Clase para crear los Productos como OBJETOS
 class Producto{
     constructor(nombre, precio, stock){
         this.nombre = nombre;
@@ -31,7 +30,6 @@ class Producto{
     }
 }
 
-//Declaro los productos como objetos y les hago push al ARRAY
 let producto_a = new Producto("Producto A", 1000, 25);
 let producto_b = new Producto("Producto B", 1200, 30);
 let producto_c = new Producto("Producto C", 1500, 35);
@@ -73,16 +71,16 @@ function pago_cuotas(total, cuotas){
 
     switch(cuotas){
         case 1:
-            alert(`Diríjase a la caja para realizar el pago de $${total.toFixed(2)}.\nGracias por su compra! Hasta`);
+            alert(`Diríjase a la caja para realizar el pago de $${total.toFixed(2)}.\nGracias por su compra!`);
             break;
         case 3:
-            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_3) / cuotas).toFixed(2)}.\nGracias por su compra! Hasta`);
+            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_3) / cuotas).toFixed(2)}.\nGracias por su compra!`);
             break;
         case 6:
-            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_6) / cuotas).toFixed(2)}.\nGracias por su compra! Hasta`);
+            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_6) / cuotas).toFixed(2)}.\nGracias por su compra!`);
             break;  
         case 12:
-            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_12) / cuotas).toFixed(2)}.\nGracias por su compra! Hasta`);
+            alert(`Diríjase a la caja para realizar el pago de la cuota 1/${cuotas} de $${((total*recargo_12) / cuotas).toFixed(2)}.\nGracias por su compra!`);
             break;  
     }
 }
@@ -127,8 +125,6 @@ while(entrada != 0){
         }
     entrada = Number(prompt(`Seleccione los productos para ir agregando al carrito: \n 1. ${producto_a.nombre}: $${producto_a.precio} - Stock remanente: ${producto_a.stock}\n 2. ${producto_b.nombre}: $${producto_b.precio} - Stock remanente: ${producto_b.stock}\n 3. ${producto_c.nombre}: $${producto_c.precio} - Stock remanente: ${producto_c.stock}\n 4. ${producto_d.nombre}: $${producto_d.precio} - Stock remanente: ${producto_d.stock}\n 5. ${producto_e.nombre}: $${producto_e.precio} - Stock remanente: ${producto_e.stock}\n 9. Volver a comenzar \n 0. Proceder al pago`));
 }
-
-
 
 if(venta_total == 0){
 alert(`Usted no ha seleccionado ningún producto. Hasta la próxima!`);
